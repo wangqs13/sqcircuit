@@ -204,15 +204,18 @@ public:
 
     Matrix &operator = (const Matrix &A)
     {
-        delete[] a;
-        delete[] value;
-        row = A.row;
-        col = A.col;
-        value = new T[row*col]();
-        a = new T*[row]();
-        for (int i = 0; i < row; ++ i)
-            a[i] = value+i*col;
-        std::copy(A.value, A.value+row*col, value);
+        if (this != &A)
+        {
+            delete[] a;
+            delete[] value;
+            row = A.row;
+            col = A.col;
+            value = new T[row * col]();
+            a = new T * [row]();
+            for (int i = 0; i < row; ++i)
+                a[i] = value + i * col;
+            std::copy(A.value, A.value + row * col, value);
+        }
         return *this;
     }
     Matrix &operator = (Matrix &&A)
