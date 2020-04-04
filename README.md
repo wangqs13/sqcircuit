@@ -18,6 +18,16 @@ Here, ```unitary``` is a unitary operator that describes the combinational part 
 
 After that, a call to ```check(machine1, rho1, machine2, rho2, basis, equal)``` will return a result indicating whether the two machines with their initial states, respectively, are equivalent or not, and, if not, a witness (that is, an input/output pair) will be given.
 
+To run the code, please make sure all headers and "main.cpp" are in the same directory. Enter
+```
+g++ main.cpp -o main -std=c++11
+```
+on the command line to compile the code, and then run it by entering
+```
+./main
+```
+on the command line. 
+
 ## References
 
 [WY18] Q. S. Wang and M. S. Ying. Equivalence checking of sequential quantum circuits. In: [arXiv:1811.07722](https://arxiv.org/abs/1811.07722).
